@@ -1,0 +1,18 @@
+{% extends '../layouts/default.html' %}
+
+{% block content %}
+  <div class="col-md-12">
+    <p class="lead">Get sentences by words</p>
+    <div ng-view>
+      <p ng-bind=tagline>  </p>
+      <input id="q" type="search" results="5" autofocus="autofocus" ng-model="q" ng-change="search()" class="form-control" placeholder="Select Language first and then 'Input word'">
+    </div>
+    <div class="results">
+      <div ng-show="hasResults" class="col-md-12">
+	<ul ng-repeat="result in results">
+	  <li ng-bind=result> </li>
+	</ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
